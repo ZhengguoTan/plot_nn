@@ -6,7 +6,7 @@
 \begin{document}
 	\begin{tikzpicture}
 		\draw[fill=blue!30, draw=blue!60, line width=3pt] (\startx, 0) rectangle (\startx+1, 8);
-		\node[font=\Large, rotate=90] at (\startx+0.5,4) {Physics-based clean signal};
+		\node[font=\Large, rotate=90] at (\startx+0.5,4) {Physics-based simulated signal};
 
         \node[font=\Large] at (\startx+2.4, \startx+4.5) {Add noise};
 		\draw[->, gray, thick, line width=3pt] (\startx+1, 4) -- (\startx+4, 4);
@@ -53,9 +53,9 @@
 		\node[text=black, font=\Large, fill=gray!30] at (0.5,9) {\textbf{Input}};
 		\node[text=black, font=\Large, fill=gray!30] at (18.2,9) {\textbf{Output}};
 
-		\draw[->, gray, thick, dashed, line width=2pt] (5, 9) -- (1.5, 9);
+		\draw[->, gray, thick, dashed, line width=2pt] (6.5, 9) -- (1.5, 9);
 		\draw[->, gray, thick, dashed, line width=2pt] (12, 9) -- (17.0, 9);
 
-		\node[text=black, font=\large] at (8.5,9) {\textbf{BCE and KL Divergence Loss}};
+		\node[text=black, font=\large] at (9.25,9) {\textbf{Loss Calculation}};
 	\end{tikzpicture}
 \end{document}
