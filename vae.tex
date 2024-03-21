@@ -1,4 +1,4 @@
-\documentclass[tikz, border=0pt]{standalone}
+\documentclass[tikz, border=0pt, 12pt]{standalone}
 \usepackage{tikz}
 
 \newcommand\startx{0}
@@ -7,7 +7,7 @@
 \begin{document}
 	\begin{tikzpicture}
 		\draw[fill=blue!30, draw=blue!60, line width=3pt] (\startx, 0) rectangle (\startx+1, 8);
-		\node[font=\Large, rotate=90] at (\startx+0.5,4) {Physics-based simulated signal $x$};
+		\node[font=\Large, rotate=90] at (\startx+0.5,4) {Physics simulated signal $d$};
 
         \node[font=\Large] at (\startx+2.4, \startx+4.5) {Add noise};
 		\draw[->, gray, thick, line width=3pt] (\startx+1, 4) -- (\startx+4, 4);
@@ -37,8 +37,8 @@
 		\node[font=\Large] at (12.5, 5.5) {\textbf{Latent}};
 
         \node[font=\Large] at (13, 1.8) {Reparameterize:};
-		\node[font=\Large] at (13, 1.2) {$\mathbf{z} = \mathbf{\mu} + \mathbf{\sigma} \cdot \mathbf{\epsilon}$};
-		\node[font=\Large] at (13, 0.6) {$\mathbf{\epsilon} \in \mathcal{N} (0, 1)$};
+		\node[font=\Large] at (13, 0.9) {$\mathbf{z} = \mathbf{\mu} + \mathbf{\sigma} \cdot \mathbf{\epsilon}$};
+		\node[font=\Large] at (13, 0.3) {$\mathbf{\epsilon} \in \mathcal{N} (0, 1)$};
 
 		\draw[->, gray, thick, line width=3pt] (13, 4) -- (14, 4);
 
@@ -48,15 +48,15 @@
 		\draw[->, gray, thick, line width=3pt] (17, 4) -- (18, 4);
 
 		\draw[fill=blue!30, draw=blue!60, line width=3pt] (18, 0) rectangle (19, 8);
-		\node[font=\Large, rotate=90] at (18.5,4) {Generated signal $\hat{x}$};
+		\node[font=\Large, rotate=90] at (18.5,4) {Generated signal $\hat{d}$};
 
 
 		\node[text=black, font=\Large, fill=gray!30] at (0.5,9) {\textbf{Input}};
 		\node[text=black, font=\Large, fill=gray!30] at (18.2,9) {\textbf{Output}};
 
-		\draw[->, gray, thick, dashed, line width=2pt] (4.5, 9) -- (1.5, 9);
-		\draw[->, gray, thick, dashed, line width=2pt] (14, 9) -- (17.0, 9);
+		\draw[->, gray, thick, dashed, line width=2pt] (3.5, 9) -- (1.5, 9);
+		\draw[->, gray, thick, dashed, line width=2pt] (15, 9) -- (17.0, 9);
 
-		\node[text=black, font=\large] at (9.25,9) {\textbf{loss: $\mathrm{Huber}(x, \hat{x}) + s \cdot D_\mathrm{KL}\left( \mathcal{N}(\mu, \sigma)~||~\mathcal{N}(0, 1) \right)$}};
+		\node[text=black, font=\large] at (9.25,9) {\textbf{loss: $\mathrm{Huber}(d, \hat{d}) + s \cdot D_\mathrm{KL}\left( \mathcal{N}(\mu, \sigma)~||~\mathcal{N}(0, 1) \right)$}};
 	\end{tikzpicture}
 \end{document}
